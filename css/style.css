@@ -1,5 +1,6 @@
 body {
     background-image: url('http://www.sanjacinto-museum.org/images/2013/battle/SJM_BattlefieldMap_v2.jpg');
+    position: relative;
 }
 
 button {
@@ -15,42 +16,59 @@ button {
     width: 50%;
     height: 600px;
     float: left;
+    display: block;
 }
 
 #column2 {
     width: 50%;
     height: 600px;
     float: right;
+    display: block;
 }
 
 
 #score1 {
     display: block;
-    float: left;
+    float: center;
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 #order1 {
     display: block;
-    float: left;
+    float: center;
 }
 
 #row1 {
     display: block;
-    float: left;
+    float: center;
+    text-align: center;
 }
 
 
 #score2 {
     display: block;
-    float: right;
+    float: center;
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 #order2 {
     display: block;
-    float: right;
+    float: center;
+    
 }
 
 #row2 {
     display: block;
-    float: right;
+    float: center;
+    text-align: center;
+}
+
+#augustus {
+    /* background-image: url('https://i.pinimg.com/originals/2e/3c/a5/2e3ca52f08738ff9afca454d4d818547.jpg'); */
+    /* width: 100px;
+    height: 100px; */
 }

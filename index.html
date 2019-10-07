@@ -41,6 +41,7 @@
     </div> -->
     
     
+    
     <div id='playerButtons'>
         <button id='belisarius' class='button' onclick='player1Choice'>Belisarius</button>
         <button id='augustus' class='button' onclick='player1Choice'>Augustus</button>
@@ -55,16 +56,18 @@
     <!-- Button trigger modal -->
 <div id='column1'>
     <score id='score1'>Player 1: 50/50</score>
-    <button id='order1' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        Order
-    </button>
+    
     
     
     <div class="btn-group mr-2" role="group" aria-label="First group" id='row1'>
-        <button type="button" id='light1' class="btn btn-secondary" onclick="easy()">L</button>
+        <button type="button" id='light1' class="btn btn-secondary" onclick="easy()">S</button>
         <button type="button" id='medium1' class="btn btn-secondary" onclick="medium()">M</button>
-        <button type="button" id='strong1' class="btn btn-secondary" onclick="hard()">S</button>
+        <button type="button" id='strong1' class="btn btn-secondary" onclick="hard()">L</button>
     </div>
+
+    <button id='order1' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Order
+    </button>
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -97,16 +100,18 @@
 
 <div id='column2'>
     <score id='score2'>Player 2: 50/50</score>
-    <button id='order2' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        Order
-    </button>
+    
     
     
     <div class="btn-group mr-2" role="group" aria-label="First group" id='row2'>
-        <button type="button" id='light2' class="btn btn-secondary" onclick="easy()">L</button>
+        <button type="button" id='light2' class="btn btn-secondary" onclick="easy()">S</button>
         <button type="button" id='medium2' class="btn btn-secondary" onclick="medium()">M</button>
-        <button type="button" id='strong2' class="btn btn-secondary" onclick="hard()">S</button>
+        <button type="button" id='strong2' class="btn btn-secondary" onclick="hard()">L</button>
     </div>
+
+    <button id='order2' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Order
+    </button>
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
