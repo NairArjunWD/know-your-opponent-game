@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,14 +14,42 @@
 </head>
 
 <body>
-
+<!-- POPUP OF MODAL FOR SELECTION -->
+    <!-- <div class="modal" tabindex="-1" role="dialog" id='myModal'>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id='playerButtons'>
+                    <button id='belisarius' class='button' onclick='player1Choice'>Belisarius</button>
+                    <button id='augustus' class='button' onclick='player1Choice'>Augustus</button>
+                    <button id='napoleon' class='button' onclick='player1Choice'>Napoleon</button>
+                    <button id='oda' class='button' onclick='player1Choice'>Oda</button>
+                    <button id='attila' class='button' onclick='player1Choice'>Attila</button>
+                    <button id='hardrada' class='button' onclick='player1Choice'>Hardrada</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
     
     <div id='playerButtons'>
         <button id='belisarius' class='button' onclick='player1Choice'>Belisarius</button>
         <button id='augustus' class='button' onclick='player1Choice'>Augustus</button>
-        <button id='hard1' class='button'>Hard</button>
+        <button id='napoleon' class='button' onclick='player1Choice'>Napoleon</button>
+        <button id='oda' class='button' onclick='player1Choice'>Oda</button>
+        <button id='attila' class='button' onclick='player1Choice'>Attila</button>
+        <button id='hardrada' class='button' onclick='player1Choice'>Hardrada</button>
     </div>
-<score id='score1'>Score: 0</score>
+<score id='score1'>Player 1: 50/50</score>
     
 <!-- ########################################################################### -->
     Button trigger modal

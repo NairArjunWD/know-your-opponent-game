@@ -385,7 +385,7 @@ const resultsContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
 console.log(augustusHard[2]);
 
-let score = 0;
+let hp = 50;
 
 let playerEasy = [];
 let playerMedium = [];
@@ -418,6 +418,9 @@ function player2Choice() {
 document.getElementById('belisarius').addEventListener('click', player1Choice);
 document.getElementById('augustus').addEventListener('click', player2Choice);
 
+$(window).on('load', function () {
+    $('#myModal').modal('show');
+});
 
 function easy () {
     if ('#light1') {
@@ -494,8 +497,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
             // if answer is correct
             if (userAnswer === questions[i].correctAnswer) {
                 // add to the number of correct answers
-                score ++;
-                document.getElementById('score1').innerText = "Score: " + score;
+                hp -= 10;
+                document.getElementById('score1').innerText = "Player 1 HP: " + hp + "/50";
 
 
                 // color the answers green
