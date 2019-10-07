@@ -1,3 +1,56 @@
+body {
+    background-image: url('http://www.sanjacinto-museum.org/images/2013/battle/SJM_BattlefieldMap_v2.jpg');
+}
+
 button {
     border: 10px orange solid;
+}
+
+#playerButtons {
+    position: relative;
+    text-align: center;
+}
+
+#column1 {
+    width: 50%;
+    height: 600px;
+    float: left;
+}
+
+#column2 {
+    width: 50%;
+    height: 600px;
+    float: right;
+}
+
+
+#score1 {
+    display: block;
+    float: left;
+}
+
+#order1 {
+    display: block;
+    float: left;
+}
+
+#row1 {
+    display: block;
+    float: left;
+}
+
+
+#score2 {
+    display: block;
+    float: right;
+}
+
+#order2 {
+    display: block;
+    float: right;
+}
+
+#row2 {
+    display: block;
+    float: right;
 }

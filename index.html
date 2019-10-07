@@ -49,20 +49,22 @@
         <button id='attila' class='button' onclick='player1Choice'>Attila</button>
         <button id='hardrada' class='button' onclick='player1Choice'>Hardrada</button>
     </div>
-<score id='score1'>Player 1: 50/50</score>
+<!-- <score id='score1'>Player 1: 50/50</score> -->
     
 <!-- ########################################################################### -->
-    Button trigger modal
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+    <!-- Button trigger modal -->
+<div id='column1'>
+    <score id='score1'>Player 1: 50/50</score>
+    <button id='order1' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
         Order
     </button>
-
-
-<div class="btn-group mr-2" role="group" aria-label="First group">
-    <button type="button" id='light1' class="btn btn-secondary" onclick="easy()">Light Attack</button>
-    <button type="button" id='medium1' class="btn btn-secondary" onclick="medium()">Medium</button>
-    <button type="button" id='strong1' class="btn btn-secondary" onclick="hard()">Strong Attack</button>
-</div>
+    
+    
+    <div class="btn-group mr-2" role="group" aria-label="First group" id='row1'>
+        <button type="button" id='light1' class="btn btn-secondary" onclick="easy()">L</button>
+        <button type="button" id='medium1' class="btn btn-secondary" onclick="medium()">M</button>
+        <button type="button" id='strong1' class="btn btn-secondary" onclick="hard()">S</button>
+    </div>
     
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -75,13 +77,13 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
+    
                 <div class="modal-body">
                     <div id='quiz'></div>
                     <button id='submit'>Submit</button>
                     <div id='result'></div>
                 </div>
-
+    
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
@@ -89,6 +91,50 @@
             </div>
         </div>
     </div>
+</div>
+    
+
+
+<div id='column2'>
+    <score id='score2'>Player 2: 50/50</score>
+    <button id='order2' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        Order
+    </button>
+    
+    
+    <div class="btn-group mr-2" role="group" aria-label="First group" id='row2'>
+        <button type="button" id='light2' class="btn btn-secondary" onclick="easy()">L</button>
+        <button type="button" id='medium2' class="btn btn-secondary" onclick="medium()">M</button>
+        <button type="button" id='strong2' class="btn btn-secondary" onclick="hard()">S</button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+    
+                <div class="modal-body">
+                    <div id='quiz'></div>
+                    <button id='submit'>Submit</button>
+                    <div id='result'></div>
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     
 
 
