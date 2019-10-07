@@ -1,5 +1,5 @@
-// const player1;
-// const player2;
+const player1 = [];
+// const player2 = [];
 
 // let selectedChoice = null;
 
@@ -12,29 +12,23 @@
 
 // // CLASS FOR CHARACTERS *******************************************************
 
-// class Characters {
-//     constructor(name)
+class Characters {
+    constructor(name, hp, easy, medium, hard){
+        this.name = name;
+        this.hp = hp;
+        this.easyQ = easy;
+        this.mediumQ = medium;
+        this.hardQ = hard;
+    }
 
-//     name = this.name;
-//     hp = 50;
-//     easyQ = [];
-//     mediumQ = [];
-//     hardQ = [];
-//     easyA = [];
-//     mediumA = [];
-//     hardA = [];
+    
 
-// }
-
+}
 
 
 
 
-// // CREATE EACH CHARACTER ******************************************************
 
-// const belisarius = new Characters(Belisarius);
-
-// const augustus = new Characters(Augustus);
 
 // QUESTIONS ******************************************************************
 
@@ -391,11 +385,43 @@ const resultsContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
 console.log(augustusHard[2]);
 
+let score = 0;
+
+let playerEasy = [];
+let playerMedium = [];
+let playerHard = [];
+
 let input = [];
+
+function player1Choice(){
+    if('#belisarius'){
+        playerEasy = belisariusEasy;
+        playerMedium = belisariusMedium;
+        playerHard = belisariusHard;
+        console.log(playerEasy)
+    }
+}
+
+function player2Choice() {
+    if ('#augustus') {
+        playerEasy = augustusEasy;
+        playerMedium = augustusMedium;
+        playerHard = augustusHard;
+        console.log(playerEasy)
+    }
+
+}
+
+// player1Choice();
+// player2Choice();
+
+document.getElementById('belisarius').addEventListener('click', player1Choice);
+document.getElementById('augustus').addEventListener('click', player2Choice);
+
 
 function easy () {
     if ('#light1') {
-        generateQuiz(augustusEasy, quizContainer, resultsContainer, submitButton);
+        generateQuiz(playerEasy, quizContainer, resultsContainer, submitButton);
     } else {
         console.log('wait')
     }
@@ -403,7 +429,7 @@ function easy () {
 
 function medium() {
     if ('#medium1') {
-        generateQuiz(augustusMedium, quizContainer, resultsContainer, submitButton);
+        generateQuiz(playerMedium, quizContainer, resultsContainer, submitButton);
     } else {
         console.log('wait')
     }
@@ -411,7 +437,7 @@ function medium() {
 
 function hard() {
     if ('#strong1') {
-        generateQuiz(augustusHard, quizContainer, resultsContainer, submitButton);
+        generateQuiz(playerHard, quizContainer, resultsContainer, submitButton);
     } else {
         console.log('wait')
     }
@@ -453,14 +479,14 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     function showResults(questions, quizContainer, resultsContainer) {
         // code will go here
         // gather answer containers from our quiz
-        var answerContainers = quizContainer.querySelectorAll('.answers');
+        let answerContainers = quizContainer.querySelectorAll('.answers');
 
         // keep track of user's answers
-        var userAnswer = '';
-        var numCorrect = 0;
+        let userAnswer = '';
+        let numCorrect = 0;
 
         // for each question...
-        for (var i = 0; i < questions.length; i++) {
+        for (let i = 0; i < questions.length; i++) {
 
             // find selected answer
             userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
@@ -468,7 +494,9 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
             // if answer is correct
             if (userAnswer === questions[i].correctAnswer) {
                 // add to the number of correct answers
-                numCorrect++;
+                score ++;
+                document.getElementById('score1').innerText = "Score: " + score;
+
 
                 // color the answers green
                 answerContainers[i].style.color = 'lightgreen';
@@ -495,7 +523,12 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
     }
 }
 
+// // CREATE EACH CHARACTER ******************************************************
 
+const belisarius = new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard);
+
+const augustus = new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard);
+console.log(belisarius)
 
 // DIV TO HOLD THE QUIZ ********************************************************
 
