@@ -1,3 +1,5 @@
+
+
 const player1 = [];
 // const player2 = [];
 
@@ -393,16 +395,19 @@ let playerHard = [];
 
 let input = [];
 
-function player1Choice(){
+function player1Choice(e){
+    e.preventDefault();
     if('#belisarius'){
         playerEasy = belisariusEasy;
         playerMedium = belisariusMedium;
         playerHard = belisariusHard;
         console.log(playerEasy)
     }
+    
 }
 
-function player2Choice() {
+function player2Choice(e) {
+    e.preventDefault();
     if ('#augustus') {
         playerEasy = augustusEasy;
         playerMedium = augustusMedium;
@@ -449,18 +454,18 @@ function hard() {
 generateQuiz(input, quizContainer, resultsContainer, submitButton);
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
-
+let random;
     function showQuestions(questions, quizContainer) {
         let output = [];
         let answers;
-        let random = Math.floor(5 * Math.random());
+        random = Math.floor(5 * Math.random());
 
         
         answers = [];
 
         for (letter in questions[random].answers) {
             answers.push(
-                '<label>'
+                '<label id="answerSelection">'
                 + '<input type="radio" name="question' + random + '" value="' + letter + '">'
                 + letter + ': '
                 + questions[random].answers[letter]
@@ -477,39 +482,50 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
 
         quizContainer.innerHTML = output.join('')
 
-        
+
     }
 
     function showResults(questions, quizContainer, resultsContainer) {
         // code will go here
         // gather answer containers from our quiz
-        let answerContainers = quizContainer.querySelectorAll('.answers');
+        let answerContainers = quizContainer.querySelectorAll('.answers input');
+        console.log(quizContainer)
+        console.log(answerContainers, "<=== all the inputs")
 
         // keep track of user's answers
         let userAnswer = '';
+        let userInput = null;
         let numCorrect = 0;
 
+        for (let i=0; i<answerContainers.length; i++){
+            if (answerContainers[i].checked){
+                userAnswer = answerContainers[i].value;
+                userInput = answerContainers[i].parentNode;
+            }
+        }
+
+
         // for each question...
-        for (let i = 0; i < questions.length; i++) {
+        // for (let i = 0; i < questions.length; i++) {
 
-            // find selected answer
-            userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
+        // find selected answer
+        // console.log(answerContainers)
+        // userAnswer = (answerContainers[i].querySelector('input[name=question' + random + ']:checked') || {}).value;
+        // console.log(userAnswer)
+        // if answer is correct
+        if (userAnswer === questions[random].correctAnswer) {
+            // add to the number of correct answers
+            hp -= 10;
+            document.getElementById('score1').innerText = "Player 1 HP: " + hp + "/50";
 
-            // if answer is correct
-            if (userAnswer === questions[i].correctAnswer) {
-                // add to the number of correct answers
-                hp -= 10;
-                document.getElementById('score1').innerText = "Player 1 HP: " + hp + "/50";
 
-
-                // color the answers green
-                answerContainers[i].style.color = 'lightgreen';
-            }
-            // if answer is wrong or blank
-            else {
-                // color the answers red
-                answerContainers[i].style.color = 'red';
-            }
+            // color the answers green
+            userInput.style.color = 'lightgreen';
+        }
+        // if answer is wrong or blank
+        else {
+            // color the answers red
+            userInput.style.color = 'red';
         }
 
         // show number of correct answers out of total
