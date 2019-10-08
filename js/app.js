@@ -477,6 +477,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
 
         quizContainer.innerHTML = output.join('')
 
+        
     }
 
     function showResults(questions, quizContainer, resultsContainer) {
