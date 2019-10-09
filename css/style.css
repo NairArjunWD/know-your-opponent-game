@@ -90,6 +90,12 @@ body {
     text-align: center;
 }
 
+.button {
+    height: 100px;
+    width: 100px;
+    
+}
+
 #column1 {
     width: 50%;
     height: 600px;
@@ -157,6 +163,9 @@ h2 {
     border: 2px fuchsia solid;
     margin: 10%;
     background-image: url('../img/Belisarius.png');
+    
+    min-height: 100%;
+    width: auto;
 }
 
 

@@ -51,9 +51,28 @@ document.getElementById('close2').onclick = function () {
     document.getElementById('turn').innerText = "Turn: " + turn;
     console.log('Yes')
 }
-// ############################################################################
+// ############### CHOOSING THE SPRITES ############################
+
+// $('#char1').on ({
+//     'click':function(){
+//         $('#box1').css("background-image", "url(../img/Belisarius.png)");
+//     }
+// });
+
+// document.getElementById('char1').onclick = function() {pickOne()};
+
+// function pickOne() {
+//     document.getElementById('box1').style.backgroundImage = "url(../img/Belisarius.png)";
+// }
+
+$(function() {
+    $('#char3').click(function() {
+        $('.box').css('background-image', 'url(./img/Napoleon.png')
+    });
+});
 
 
+// #####################################################################
 let currentPlayer = null;
 
 if(turn%2 === 0) {
