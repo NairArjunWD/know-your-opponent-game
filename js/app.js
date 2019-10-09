@@ -1,6 +1,6 @@
 
 
-const player1 = [];
+
 // const player2 = [];
 
 // let selectedChoice = null;
@@ -10,26 +10,57 @@ const player1 = [];
 // function quizQuestion(){}
 
 // function quizAnswer(){}
+class Player {
+    constructor(hp, choice){
+        this.hp = hp;
+        this.choice = choice
+    }
+    
+}
+
+const player1 = new Player(50, player1Choice);
+const player2 = new Player(50, player2Choice);
+
 
 
 // // CLASS FOR CHARACTERS *******************************************************
 
 class Characters {
-    constructor(name, hp, easy, medium, hard){
+    constructor(name, easy, medium, hard){
         this.name = name;
-        this.hp = hp;
         this.easyQ = easy;
         this.mediumQ = medium;
         this.hardQ = hard;
     }
 
-    
-
 }
 
+// TURN COUNTER ############################################################
+let turn = 1;
+
+// PLAYER 1
+document.getElementById('close1').onclick = function() {
+    turn ++;
+    document.getElementById('turn').innerText = "Turn: " + turn;
+    console.log('Yes')
+}
+
+// PLAYER 2
+document.getElementById('close2').onclick = function () {
+    turn++;
+    document.getElementById('turn').innerText = "Turn: " + turn;
+    console.log('Yes')
+}
+// ############################################################################
 
 
+let currentPlayer = null;
 
+if(turn%2 === 0) {
+    currentPlayer = player2Choice;
+} else {
+    currentPlayer = player1Choice;
+}
 
 
 // QUESTIONS ******************************************************************
@@ -67,7 +98,7 @@ const belisariusEasy = [
             c: 'Vespia',
             d: 'Irene'
         },
-        correctAnswer: 'a'
+        correctAnswer: 'b'
     },
 
     {
@@ -208,7 +239,7 @@ const belisariusHard = [
     }
 ]
 
-// Augustus
+// Augustus ##############******************#####################***************
 
 const augustusEasy = [
     {
@@ -387,7 +418,7 @@ const resultsContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
 console.log(augustusHard[2]);
 
-let hp = 50;
+
 
 let playerEasy = [];
 let playerMedium = [];
@@ -402,26 +433,38 @@ function player1Choice(e){
         playerMedium = belisariusMedium;
         playerHard = belisariusHard;
         console.log(playerEasy)
+    } else if ('#augustus') {
+        playerEasy = augustusEasy;
+        playerMedium = augustusMedium;
+        playerHard = augustusHard;
+        console.log(playerEasy)
     }
     
 }
 
 function player2Choice(e) {
     e.preventDefault();
-    if ('#augustus') {
+    if ('#belisarius') {
+        playerEasy = belisariusEasy;
+        playerMedium = belisariusMedium;
+        playerHard = belisariusHard;
+        console.log(playerEasy)
+    } else if ('#augustus') {
         playerEasy = augustusEasy;
         playerMedium = augustusMedium;
         playerHard = augustusHard;
         console.log(playerEasy)
     }
-
 }
+
 
 // player1Choice();
 // player2Choice();
 
-document.getElementById('belisarius').addEventListener('click', player1Choice);
-document.getElementById('augustus').addEventListener('click', player2Choice);
+
+
+document.getElementById('belisarius').addEventListener('click', currentPlayer);
+document.getElementById('augustus').addEventListener('click', currentPlayer);
 
 $(window).on('load', function () {
     $('#myModal').modal('show');
@@ -451,17 +494,17 @@ function hard() {
     }
 }
 
-generateQuiz(input, quizContainer, resultsContainer, submitButton);
+// generateQuiz(input, quizContainer, resultsContainer, submitButton);
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
 let random;
     function showQuestions(questions, quizContainer) {
-        let output = [];
-        let answers;
+        const output = [];
+        const answers = [];
         random = Math.floor(5 * Math.random());
 
         
-        answers = [];
+        // answers = [];
 
         for (letter in questions[random].answers) {
             answers.push(
@@ -514,10 +557,16 @@ let random;
         // console.log(userAnswer)
         // if answer is correct
         if (userAnswer === questions[random].correctAnswer) {
+            if(currentPlayer = player2Choice) {
+                player1.hp -= 10;
+                document.getElementById('score1').innerText = "Player 1 HP: " + player1.hp + "/50";
+            } else {
+                player2.hp -= 10;
+                document.getElementById('score2').innerText = "Player 2 HP: " + player2.hp + "/50";
+            }
             // add to the number of correct answers
-            hp -= 10;
-            document.getElementById('score1').innerText = "Player 1 HP: " + hp + "/50";
-
+            // player1.hp -= 10;
+            // document.getElementById('score1').innerText = "Player 1 HP: " + player1.hp + "/50";
 
             // color the answers green
             userInput.style.color = 'lightgreen';
@@ -543,6 +592,7 @@ let random;
     }
 }
 
+
 // // CREATE EACH CHARACTER ******************************************************
 
 const belisarius = new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard);
@@ -553,9 +603,10 @@ console.log(belisarius)
 // DIV TO HOLD THE QUIZ ********************************************************
 
 // CHOOSE THE CHARACTER *******************************************************
-
+generateQuiz(input, quizContainer, resultsContainer, submitButton);
 
 // CHOOSE EASY, MEDUIM, OR HARD ***********************************************
+
 
 
 
@@ -568,6 +619,9 @@ console.log(belisarius)
 
 // WIN SCENARIO
 
+// if(player1.hp <= 0) {
+//     console.log('Player 2 Wins!');
+// }
 
 
 
