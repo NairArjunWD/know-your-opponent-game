@@ -153,10 +153,10 @@ h2 {
 .box {
     width: 400px;
     height: 500px;
-    background-color: aqua;
+    
     border: 2px fuchsia solid;
     margin: 10%;
-    /* background-image: url('https://vignette.wikia.nocookie.net/age-of-ishtaria/images/c/c2/Belisarius.png/revision/latest?cb=20170212023801'); */
+    background-image: url('../img/Belisarius.png');
 }
 
 
