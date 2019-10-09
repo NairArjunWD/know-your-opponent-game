@@ -1,5 +1,5 @@
 body {
-    background-image: url('http://www.sanjacinto-museum.org/images/2013/battle/SJM_BattlefieldMap_v2.jpg');
+    background-image: url('https://previews.123rf.com/images/pixelsaway/pixelsaway1605/pixelsaway160500180/57341081-egyptian-papyrus-paper-background-papyrus-a-renewable-plant-resource-is-the-oldest-writing-material-.jpg');
     position: relative;
 }
 
@@ -27,7 +27,10 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 200px;
+    height: 300px;
+    background-color: rgba(204, 204, 204, 0.5);
+    align-items: center;
+    
 }
 
 .char-selection {
@@ -37,6 +40,7 @@ body {
     background-size: cover;
     background-repeat: none;
     transition: flex 0.8s ease;
+    
 }
 
 .char-selection:hover {
@@ -48,7 +52,7 @@ body {
 }
 
 #char2 {
-    background-image: url('https://i7.pngguru.com/preview/795/177/143/ancient-rome-roman-republic-spqr-roman-senate-roman.jpg');
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Roman_SPQR_banner.svg/1200px-Roman_SPQR_banner.svg.png');
 }
 
 #char3 {
@@ -67,14 +71,23 @@ body {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/10/Raven_Banner.svg');
 }
 
-button {
-    border: 10px orange solid;
+.select-button {
+    background-color: rgba(153, 150, 250, 0.5);
+    text-align: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 30%;
+    
 }
+
+/* button {
+    border: 10px orange solid;
+} */
 
 #playerButtons {
     position: relative;
     text-align: center;
-    
 }
 
 #column1 {
@@ -137,8 +150,22 @@ h2 {
     background-color: cadetblue;
 }
 
+.box {
+    width: 400px;
+    height: 500px;
+    background-color: aqua;
+    border: 2px fuchsia solid;
+    margin: 10%;
+    /* background-image: url('https://vignette.wikia.nocookie.net/age-of-ishtaria/images/c/c2/Belisarius.png/revision/latest?cb=20170212023801'); */
+}
+
+
+
+
+
 #augustus {
     /* background-image: url('https://i.pinimg.com/originals/2e/3c/a5/2e3ca52f08738ff9afca454d4d818547.jpg'); */
     /* width: 100px;
     height: 100px; */
 }
+
