@@ -69,27 +69,51 @@ $(function() {
     $('#char1').click(function () {
         $('#box1').css('background-image', 'url(./img/Belisarius.png')
         $("#belisarius").appendTo("#box1");
+        $("#row1").appendTo("#box1");
+        $("#order1").appendTo("#box1");
         $(this).hide();
+        turn++;
+        console.log(turn);
     });
 
     $('#char2').click(function () {
         $('#box1').css('background-image', 'url(./img/Augustus.png')
+        $("#augustus").appendTo("#box1");
+        $("#row1").appendTo("#box1");
+        $("#order1").appendTo("#box1");
+        $(this).hide();
     });
 
     $('#char3').click(function() {
         $('#box1').css('background-image', 'url(./img/Napoleon.png')
+        $("#napoleon").appendTo("#box1");
+        $("#row1").appendTo("#box1");
+        $("#order1").appendTo("#box1");
+        $(this).hide();
     });
 
     $('#char4').click(function () {
         $('#box1').css('background-image', 'url(./img/Oda.png')
+        $("#oda").appendTo("#box1");
+        $("#row1").appendTo("#box1");
+        $("#order1").appendTo("#box1");
+        $(this).hide();
     });
 
     $('#char5').click(function () {
         $('#box1').css('background-image', 'url(./img/Attila.png')
+        $("#attila").appendTo("#box1");
+        $("#row1").appendTo("#box1");
+        $("#order1").appendTo("#box1");
+        $(this).hide();
     });
 
     $('#char6').click(function () {
         $('#box1').css('background-image', 'url(./img/Hardrada.png')
+        $("#hardrada").appendTo("#box1");
+        $("#row1").appendTo("#box1");
+        $("#order1").appendTo("#box1");
+        $(this).hide();
     });
 });
 
