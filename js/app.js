@@ -66,8 +66,30 @@ document.getElementById('close2').onclick = function () {
 // }
 
 $(function() {
+    $('#char1').click(function () {
+        $('#box1').css('background-image', 'url(./img/Belisarius.png')
+        $("#belisarius").appendTo("#box1");
+        $(this).hide();
+    });
+
+    $('#char2').click(function () {
+        $('#box1').css('background-image', 'url(./img/Augustus.png')
+    });
+
     $('#char3').click(function() {
-        $('.box').css('background-image', 'url(./img/Napoleon.png')
+        $('#box1').css('background-image', 'url(./img/Napoleon.png')
+    });
+
+    $('#char4').click(function () {
+        $('#box1').css('background-image', 'url(./img/Oda.png')
+    });
+
+    $('#char5').click(function () {
+        $('#box1').css('background-image', 'url(./img/Attila.png')
+    });
+
+    $('#char6').click(function () {
+        $('#box1').css('background-image', 'url(./img/Hardrada.png')
     });
 });
 
