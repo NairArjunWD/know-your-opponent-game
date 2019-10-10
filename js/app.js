@@ -433,10 +433,11 @@ document.getElementById('close2').onclick = function () {
         let playerPick = characterList[$(e.target).attr('id')]
         console.log(playerPick)
         console.log(playerPick.easyQ)
+        console.log($(`#${playerPick.name.toLowerCase()}-button`))
         if(currentPlayer === player1) {
-            $('#box1').css('background-image', `${playerPick.img}`)
+            $('#box1').css('background-image', `url(${playerPick.img})`)
             $(`#${playerPick.name}`).appendTo("#box2");
-            $('#belisarius-button').appendTo('#box2');
+            $(`#${playerPick.name.toLowerCase()}-button`).appendTo("#box2");
             $("#row2").appendTo("#box2");
             $("#order2").appendTo("#box2");
             // $((`#${playerPick.easyQ}`).appendTo(playerEasy()))
@@ -445,8 +446,9 @@ document.getElementById('close2').onclick = function () {
             playerSwitch()
             console.log(turn);
         } else {
-            $('#box2').css('background-image', `${playerPick.img}`)
+            $('#box2').css('background-image', `url(${playerPick.img})`)
             $(`#${playerPick.name}`).appendTo("#box1");
+            $(`#${playerPick.name.toLowerCase()}-button`).appendTo("#box1");
             $("#row1").appendTo("#box1");
             $("#order1").appendTo("#box1");
             console.log('we are here')
@@ -513,8 +515,8 @@ function player2Choice(e) {
 
 
 
-document.getElementById('belisarius').addEventListener('click', player1Choice);
-document.getElementById('augustus').addEventListener('click', player2Choice);
+document.getElementById('belisarius-button').addEventListener('click', player1Choice);
+document.getElementById('augustus-button').addEventListener('click', player2Choice);
 
 $(window).on('load', function () {
     $('#myModal').modal('show');
