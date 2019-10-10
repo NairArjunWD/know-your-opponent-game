@@ -432,11 +432,14 @@ document.getElementById('close2').onclick = function () {
         
         let playerPick = characterList[$(e.target).attr('id')]
         console.log(playerPick)
+        console.log(playerPick.easyQ)
         if(currentPlayer === player1) {
             $('#box1').css('background-image', `${playerPick.img}`)
             $(`#${playerPick.name}`).appendTo("#box2");
+            $('#belisarius-button').appendTo('#box2');
             $("#row2").appendTo("#box2");
             $("#order2").appendTo("#box2");
+            // $((`#${playerPick.easyQ}`).appendTo(playerEasy()))
             $(e.target).hide();
             turn++;
             playerSwitch()
@@ -469,27 +472,18 @@ function playerSwitch (){
 
 
 console.log(augustusHard);
-// const quizContainer = document.getElementById('quiz');
-// const resultsContainer = document.getElementById('result');
-// const submitButton = document.getElementById('submit');
-console.log(augustusHard[2]);
 
+// console.log(`${playerPick.easy}`);
 
-
-// let playerEasy = [];
-// let playerMedium = [];
-// let playerHard = [];
-
-// let input = [];
 
 function player1Choice(e){
     e.preventDefault();
-    if('#belisarius'){
+    if ('#belisarius-button'){
         playerEasy = belisariusEasy;
         playerMedium = belisariusMedium;
         playerHard = belisariusHard;
         console.log(playerEasy)
-    } else if ('#augustus') {
+    } else if ('#augustus-button') {
         playerEasy = augustusEasy;
         playerMedium = augustusMedium;
         playerHard = augustusHard;
@@ -500,12 +494,12 @@ function player1Choice(e){
 
 function player2Choice(e) {
     e.preventDefault();
-    if ('#belisarius') {
+    if ('#belisarius-button') {
         playerEasy = belisariusEasy;
         playerMedium = belisariusMedium;
         playerHard = belisariusHard;
         console.log(playerEasy)
-    } else if ('#augustus') {
+    } else if ('#augustus-button') {
         playerEasy = augustusEasy;
         playerMedium = augustusMedium;
         playerHard = augustusHard;
@@ -519,8 +513,8 @@ function player2Choice(e) {
 
 
 
-document.getElementById('belisarius').addEventListener('click', currentPlayer);
-document.getElementById('augustus').addEventListener('click', currentPlayer);
+document.getElementById('belisarius').addEventListener('click', player1Choice);
+document.getElementById('augustus').addEventListener('click', player2Choice);
 
 $(window).on('load', function () {
     $('#myModal').modal('show');
@@ -651,10 +645,6 @@ let random;
 
 // // CREATE EACH CHARACTER ******************************************************
 
-// const belisarius = new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard, './img/Belisarius.png');
-
-// const augustus = new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard, './img/Augustus.png');
-// console.log(belisarius)
 
 // DIV TO HOLD THE QUIZ ********************************************************
 
@@ -678,18 +668,3 @@ generateQuiz(input, quizContainer, resultsContainer, submitButton);
 // if(player1.hp <= 0) {
 //     console.log('Player 2 Wins!');
 // }
-
-
-
-// answers.push(
-//     '<label>'
-//     + '<input type="radio" name="question' + 2 + '" value="' + letter + '">'
-//     + letter + ': '
-//     + augustusHard[2].answers[letter]
-//     + '</label>'
-// );
-
-// output.push(
-//     '<div class="question">' + augustusHard[i].question + '</div>'
-//     + '<div class="answers">' + answers.join('') + '</div>'
-// );
