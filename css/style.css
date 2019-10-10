@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 300px;
+    height: 100vh;
     background-color: rgba(204, 204, 204, 0.5);
     align-items: center;
     
@@ -49,11 +49,11 @@ body {
     
 }
 
-#char1 {
+#belisarius {
     background-image: url('https://img.pngio.com/byzantine-empire-assassins-creed-wiki-fandom-powered-by-wikia-byzantine-empire-png-500_416.png');
 }
 
-#char2 {
+#augustus {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Roman_SPQR_banner.svg/1200px-Roman_SPQR_banner.svg.png');
 }
 
@@ -100,7 +100,7 @@ body {
 .button {
     height: 100px;
     width: 100px;
-    
+    border-radius: 50%;
 }
 
 #column1 {

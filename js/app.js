@@ -1,132 +1,17 @@
 
+let turn = -1;
 
-
-// const player2 = [];
-
-// let selectedChoice = null;
-
-
-
-// function quizQuestion(){}
-
-// function quizAnswer(){}
-class Player {
-    constructor(hp, choice){
-        this.hp = hp;
-        this.choice = choice
-    }
-    
-}
-
-const player1 = new Player(50, player1Choice);
-const player2 = new Player(50, player2Choice);
-
-
-
-// // CLASS FOR CHARACTERS *******************************************************
-
-class Characters {
-    constructor(name, easy, medium, hard){
-        this.name = name;
-        this.easyQ = easy;
-        this.mediumQ = medium;
-        this.hardQ = hard;
-    }
-
-}
-
-// TURN COUNTER ############################################################
-let turn = 1;
-
-// PLAYER 1
-document.getElementById('close1').onclick = function() {
-    turn ++;
-    document.getElementById('turn').innerText = "Turn: " + turn;
-    console.log('Yes')
-}
-
-// PLAYER 2
-document.getElementById('close2').onclick = function () {
-    turn++;
-    document.getElementById('turn').innerText = "Turn: " + turn;
-    console.log('Yes')
-}
-// ############### CHOOSING THE SPRITES ############################
-
-// $('#char1').on ({
-//     'click':function(){
-//         $('#box1').css("background-image", "url(../img/Belisarius.png)");
-//     }
-// });
-
-// document.getElementById('char1').onclick = function() {pickOne()};
-
-// function pickOne() {
-//     document.getElementById('box1').style.backgroundImage = "url(../img/Belisarius.png)";
-// }
-
-$(function() {
-    $('#char1').click(function () {
-        $('#box1').css('background-image', 'url(./img/Belisarius.png')
-        $("#belisarius").appendTo("#box1");
-        $("#row1").appendTo("#box1");
-        $("#order1").appendTo("#box1");
-        $(this).hide();
-        turn++;
-        console.log(turn);
-    });
-
-    $('#char2').click(function () {
-        $('#box1').css('background-image', 'url(./img/Augustus.png')
-        $("#augustus").appendTo("#box1");
-        $("#row1").appendTo("#box1");
-        $("#order1").appendTo("#box1");
-        $(this).hide();
-    });
-
-    $('#char3').click(function() {
-        $('#box1').css('background-image', 'url(./img/Napoleon.png')
-        $("#napoleon").appendTo("#box1");
-        $("#row1").appendTo("#box1");
-        $("#order1").appendTo("#box1");
-        $(this).hide();
-    });
-
-    $('#char4').click(function () {
-        $('#box1').css('background-image', 'url(./img/Oda.png')
-        $("#oda").appendTo("#box1");
-        $("#row1").appendTo("#box1");
-        $("#order1").appendTo("#box1");
-        $(this).hide();
-    });
-
-    $('#char5').click(function () {
-        $('#box1').css('background-image', 'url(./img/Attila.png')
-        $("#attila").appendTo("#box1");
-        $("#row1").appendTo("#box1");
-        $("#order1").appendTo("#box1");
-        $(this).hide();
-    });
-
-    $('#char6').click(function () {
-        $('#box1').css('background-image', 'url(./img/Hardrada.png')
-        $("#hardrada").appendTo("#box1");
-        $("#row1").appendTo("#box1");
-        $("#order1").appendTo("#box1");
-        $(this).hide();
-    });
-});
-
-
-// #####################################################################
 let currentPlayer = null;
 
-if(turn%2 === 0) {
-    currentPlayer = player2Choice;
-} else {
-    currentPlayer = player1Choice;
-}
+let playerEasy = [];
+let playerMedium = [];
+let playerHard = [];
 
+let input = [];
+
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('result');
+const submitButton = document.getElementById('submit');
 
 // QUESTIONS ******************************************************************
 
@@ -141,7 +26,7 @@ const belisariusEasy = [
             c: 'Theodora',
             d: 'Stilicho'
         },
-        correctAnswer: 'b' 
+        correctAnswer: 'b'
     },
 
     {
@@ -477,19 +362,125 @@ const augustusHard = [
         correctAnswer: 'a'
     }
 ];
+
+// const player2 = [];
+
+// let selectedChoice = null;
+
+
+
+// function quizQuestion(){}
+
+// function quizAnswer(){}
+class Player {
+    constructor(hp, choice){
+        this.hp = hp;
+        this.choice = choice
+    }
+    
+}
+
+const player1 = new Player(50, player1Choice);
+const player2 = new Player(50, player2Choice);
+
+currentPlayer = player1;
+
+
+
+// // CLASS FOR CHARACTERS *******************************************************
+
+class Characters {
+    constructor(name, hp, easy, medium, hard, img){
+        this.name = name;
+        this.hp = hp;
+        this.easyQ = easy;
+        this.mediumQ = medium;
+        this.hardQ = hard;
+        this.img = img
+    }
+}
+
+const characterList = {
+    belisarius: new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard, './img/Belisarius.png'),
+    augustus: new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard, './img/Augustus.png')
+}
+
+
+console.log(belisarius)
+
+// TURN COUNTER ############################################################
+// let turn = -1;
+
+// PLAYER 1
+document.getElementById('close1').onclick = function() {
+    turn ++;
+    document.getElementById('turn').innerText = "Turn: " + turn;
+    console.log('Yes')
+}
+
+// PLAYER 2
+document.getElementById('close2').onclick = function () {
+    turn++;
+    document.getElementById('turn').innerText = "Turn: " + turn;
+    console.log('Yes')
+}
+
+
+
+// ############### FUNCTION FOR PLAYER 1 SELECTION #####################################
+    $('#wrap').click(e => {
+        
+        let playerPick = characterList[$(e.target).attr('id')]
+        console.log(playerPick)
+        if(currentPlayer === player1) {
+            $('#box1').css('background-image', `${playerPick.img}`)
+            $(`#${playerPick.name}`).appendTo("#box2");
+            $("#row2").appendTo("#box2");
+            $("#order2").appendTo("#box2");
+            $(e.target).hide();
+            turn++;
+            playerSwitch()
+            console.log(turn);
+        } else {
+            $('#box2').css('background-image', `${playerPick.img}`)
+            $(`#${playerPick.name}`).appendTo("#box1");
+            $("#row1").appendTo("#box1");
+            $("#order1").appendTo("#box1");
+            console.log('we are here')
+            $('#wrap').hide();
+            turn++;
+            playerSwitch()
+            console.log(turn);
+        }
+        
+    })
+
+
+
+function playerSwitch (){
+    if (turn % 2 === 0) {
+        currentPlayer = player2Choice;
+    } else {
+        currentPlayer = player1Choice;
+    }
+}
+
+
+
+
 console.log(augustusHard);
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('result');
-const submitButton = document.getElementById('submit');
+// const quizContainer = document.getElementById('quiz');
+// const resultsContainer = document.getElementById('result');
+// const submitButton = document.getElementById('submit');
 console.log(augustusHard[2]);
 
 
 
-let playerEasy = [];
-let playerMedium = [];
-let playerHard = [];
+// let playerEasy = [];
+// let playerMedium = [];
+// let playerHard = [];
 
-let input = [];
+// let input = [];
 
 function player1Choice(e){
     e.preventDefault();
@@ -660,10 +651,10 @@ let random;
 
 // // CREATE EACH CHARACTER ******************************************************
 
-const belisarius = new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard);
+// const belisarius = new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard, './img/Belisarius.png');
 
-const augustus = new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard);
-console.log(belisarius)
+// const augustus = new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard, './img/Augustus.png');
+// console.log(belisarius)
 
 // DIV TO HOLD THE QUIZ ********************************************************
 
