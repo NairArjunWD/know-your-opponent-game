@@ -1,5 +1,9 @@
 body {
-    background-image: url('https://previews.123rf.com/images/pixelsaway/pixelsaway1605/pixelsaway160500180/57341081-egyptian-papyrus-paper-background-papyrus-a-renewable-plant-resource-is-the-oldest-writing-material-.jpg');
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('../img/meadow.png');
+    background-size: cover;
+    background-repeat: none;
+    height: 100vh;
     position: relative;
 }
 
@@ -21,6 +25,10 @@ body {
     margin: 0 auto;
     padding: 0 0;
     width: 100%;
+}
+
+audio {
+    display: none;
 }
 
 #wrap {
@@ -84,7 +92,7 @@ body {
 }
 
 .hide {
-    /* display: none; */
+    display: none;
 }
 
 /* button {
@@ -94,13 +102,18 @@ body {
 #playerButtons {
     position: relative;
     text-align: center;
-    /* display: none; */
+    display: none;
+
 }
 
 .button {
     height: 100px;
     width: 100px;
     border-radius: 50%;
+    
+    background-image: url('../img/shouting.png');
+
+    background-size: contain;
 }
 
 #column1 {
@@ -127,14 +140,15 @@ body {
 }
 
 #order1 {
-    display: block;
-    float: center;
+    display: inline-block;
+    text-align: center;
 }
 
 #row1 {
     display: block;
-    float: center;
+    
     text-align: center;
+    
 }
 
 
@@ -158,23 +172,39 @@ body {
     text-align: center;
 }
 
+.btn-group-vertical {
+    margin-top: 50%
+}
+
+/* .btn-group-vertical {
+    background-color: rgba(204, 204, 204, 0.5)
+} */
+
 h2 {
     text-align: center;
-    background-color: cadetblue;
+    background-color: rgba(64,224,208,0.5);
+    color: wheat;
 }
 
 .box {
     width: 400px;
     height: 500px;
     
-    border: 2px fuchsia solid;
+    border: none;
     margin: 10%;
     background-image: url('../img/Hardrada.png');
     
     min-height: 100%;
     width: auto;
+    border-radius: 30%;
+
+    background-size: cover;
 }
 
+score {
+    background-color: rgba(64,224,208,0.5);
+    color: wheat;
+}
 
 
 

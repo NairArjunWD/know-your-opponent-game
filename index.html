@@ -17,7 +17,11 @@
 
 <audio controls>
     <source src="audio/The Last Encounter (Original Version).mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+    
+</audio>
+
+<audio autoplay loop>
+    <source src="audio/The Last Encounter (Original Version).mp3">
 </audio>
 
 <!-- <audio id="mainMusic" src="audio/The Last Encounter (Original Version).mp3" preload="auto"></audio> -->
@@ -47,7 +51,7 @@
         </div>
     </div> -->
     
-
+    <!-- <button type="button" onClick="window.location.reload();">Reload</button> -->
     <div id='selection'>
         <div id='wrap'>
             <div class='char-selection' id='belisarius'></div>
@@ -62,12 +66,12 @@
     
     
     <div id='playerButtons'>
-        <button id='belisarius-button' class='button' onclick='player1Choice'>Belisarius</button>
-        <button id='augustus-button' class='button' onclick='player2Choice'>Augustus</button>
-        <button id='napoleon-button' class='button' onclick='player1Choice'>Napoleon</button>
-        <button id='oda-button' class='button' onclick='player1Choice'>Oda</button>
-        <button id='attila-button' class='button' onclick='player1Choice'>Attila</button>
-        <button id='hardrada-button' class='button' onclick='player1Choice'>Hardrada</button>
+        <button id='belisarius-button' class='button' onclick='player1Choice'>B</button>
+        <button id='augustus-button' class='button' onclick='player2Choice'>Au</button>
+        <button id='napoleon-button' class='button' onclick='player1Choice'>N</button>
+        <button id='oda-button' class='button' onclick='player1Choice'>O</button>
+        <button id='attila-button' class='button' onclick='player1Choice'>At</button>
+        <button id='hardrada-button' class='button' onclick='player1Choice'>H</button>
     </div>
 
     <div>
@@ -82,10 +86,10 @@
     
     
     <div class='hide'>
-        <div class="btn-group mr-2" role="group" aria-label="First group" id='row1'>
-            <button type="button" id='light1' class="btn btn-secondary" onclick="easy()">S</button>
-            <button type="button" id='medium1' class="btn btn-secondary" onclick="medium()">M</button>
-            <button type="button" id='strong1' class="btn btn-secondary" onclick="hard()">L</button>
+        <div class="btn-group-vertical" role="group" aria-label="First group" id='row1'>
+            <button type="button" id='light1' class="btn btn-primary" onclick="easy()">Archers! Ready your aim!</button>
+            <button type="button" id='medium1' class="btn btn-success" onclick="medium()">Foward, march!</button>
+            <button type="button" id='strong1' class="btn btn-danger" onclick="hard()">It's now or never! Charge!</button>
         </div>
         
         <button id='order1' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
@@ -101,7 +105,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Our spies found something!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -115,14 +119,14 @@
     
                 <div class="modal-footer">
                     <button id='close1' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    
                 </div>
             </div>
         </div>
     </div>
 
     <div class='box' id='box1'>
-        a
+        
     </div>
 </div>
     
@@ -133,10 +137,10 @@
     
     
     <div class='hide'>
-        <div class="btn-group mr-2" role="group" aria-label="First group" id='row2'>
-            <button type="button" id='light2' class="btn btn-secondary" onclick="easy()">S</button>
-            <button type="button" id='medium2' class="btn btn-secondary" onclick="medium()">M</button>
-            <button type="button" id='strong2' class="btn btn-secondary" onclick="hard()">L</button>
+        <div class="btn-group-vertical" role="group" aria-label="First group" id='row2'>
+            <button type="button" id='light2' class="btn btn-primary" onclick="easy()">Archers! Ready your aim!</button>
+            <button type="button" id='medium2' class="btn btn-success" onclick="medium()">Foward, march!</button>
+            <button type="button" id='strong2' class="btn btn-danger" onclick="hard()">It's now or never! Charge!</button>
         </div>
         
         <button id='order2' type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
@@ -151,7 +155,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Our spies found something!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -165,14 +169,14 @@
     
                 <div class="modal-footer">
                     <button id='close2' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    
                 </div>
             </div>
         </div>
     </div>
 
     <div class='box' id='box2'>
-        a
+        
     </div>
 </div>
 
