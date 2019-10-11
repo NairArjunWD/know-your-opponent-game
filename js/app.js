@@ -250,11 +250,11 @@ const augustusEasy = [
 // ######### MEDIUM #################### MEDIUM ################################
 const augustusMedium = [
     {
-        question: 'Despite his weak body, what was he considered a great commander?',
+        question: 'Despite his weak body, he still came to the battlefield which gained him the respect of his troops. However, what was the main reason he was considered a great commander?',
         answers: {
             a: 'His silver tongue was able to convince the enemies to not fight',
             b: 'His philosophy helped calm his soldiers during troubled times',
-            c: 'He was a master strategist and tactician who was always able to beat his enemies.',
+            c: 'He was a god-like strategist and tactician who was always able to beat his enemies.',
             d: 'His desire to put his troops before his own needs and comfort'
         },
         correctAnswer: 'c'
@@ -338,7 +338,7 @@ const augustusHard = [
             c: 'Julio-Claudian',
             d: 'Julio-Caligiani'
         },
-        correctAnswer: 'a'
+        correctAnswer: 'c'
     },
 
     {
@@ -366,187 +366,179 @@ const augustusHard = [
 
 // // Napoleon ##############******************#####################***************
 
-// const napoleonEasy = [
-//     {
-//         question: 'What was the new French nation called under Napoleon?',
-//         answers: {
-//             a: 'The French Empire',
-//             b: 'The Grand French Empire',
-//             c: 'The Great Empire of France',
-//             d: 'The Gallic Empire'
-//         },
-//         correctAnswer: 'a'
-//     },
+const napoleonEasy = [
+    {
+        question: 'What was the new French nation called under Napoleon?',
+        answers: {
+            a: 'The French Empire',
+            b: 'The Grand French Empire',
+            c: 'The Great Empire of France',
+            d: 'The Gallic Empire'
+        },
+        correctAnswer: 'a'
+    },
 
-//     {
-//         question: 'Which of these countries was Napoleon a fan of and based his empire from?',
-//         answers: {
-//             a: 'The Greek City States',
-//             b: 'The Roman Empire',
-//             c: 'The Hunnic Empire',
-//             d: 'The Catalonian Empire'
-//         },
-//         correctAnswer: 'b'
-//     },
+    {
+        question: 'Which of these countries was Napoleon a fan of and based his empire from?',
+        answers: {
+            a: 'The Greek City States',
+            b: 'The Roman Empire',
+            c: 'The Hunnic Empire',
+            d: 'The Catalonian Empire'
+        },
+        correctAnswer: 'b'
+    },
 
-//     {
-//         question: 'What was his son, Napoleon II, named as?',
-//         answers: {
-//             a: 'King of France',
-//             b: 'King of Austria',
-//             c: 'King of Rome',
-//             d: 'King of Paris'
-//         },
-//         correctAnswer: 'c'
-//     },
+    {
+        question: 'What was his son, Napoleon II, named as?',
+        answers: {
+            a: 'King of France',
+            b: 'King of Austria',
+            c: 'King of Rome',
+            d: 'King of Paris'
+        },
+        correctAnswer: 'c'
+    },
 
-//     {
-//         question: 'Which year was he born?',
-//         answers: {
-//             a: '1709',
-//             b: '1769',
-//             c: '1789',
-//             d: '1808'
-//         },
-//         correctAnswer: 'b'
-//     },
+    {
+        question: 'Which year was he born?',
+        answers: {
+            a: '1709',
+            b: '1769',
+            c: '1789',
+            d: '1808'
+        },
+        correctAnswer: 'b'
+    },
 
-//     {
-//         question: 'Napoleon was short?',
-//         answers: {
-//             a: 'True',
-//             b: 'False'
-//         },
-//         correctAnswer: 'b'
-//     }
-// ]
+    {
+        question: 'Napoleon was short?',
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'b'
+    }
+]
 
-// // ######### MEDIUM #################### MEDIUM ################################
-// const napoleonMedium = [
-//     {
-//         question: 'What was the name of his famous white horse?',
-//         answers: {
-//             a: 'Vizir',
-//             b: 'Blanco',
-//             c: 'Clouttier',
-//             d: 'Marengo'
-//         },
-//         correctAnswer: 'd'
-//     },
+// ######### MEDIUM #################### MEDIUM ################################
+const napoleonMedium = [
+    {
+        question: 'What was the name of his famous white horse?',
+        answers: {
+            a: 'Vizir',
+            b: 'Blanco',
+            c: 'Clouttier',
+            d: 'Marengo'
+        },
+        correctAnswer: 'd'
+    },
 
-//     {
-//         question: 'What type of sword did Napoleon carry?',
-//         answers: {
-//             a: 'rapier',
-//             b: 'gladdius',
-//             c: 'sabre',
-//             d: 'epee'
-//         },
-//         correctAnswer: 'c'
-//     },
+    {
+        question: 'What type of sword did Napoleon carry?',
+        answers: {
+            a: 'rapier',
+            b: 'gladdius',
+            c: 'sabre',
+            d: 'epee'
+        },
+        correctAnswer: 'c'
+    },
 
-//     {
-//         question: 'How tall is Napoleon by US standards?',
-//         answers: {
-//             a: "5'7",
-//             b: "5'8",
-//             c: "5'9",
-//             d: "5'10"
-//         },
-//         correctAnswer: 'a'
-//     },
+    {
+        question: 'How tall is Napoleon by US standards?',
+        answers: {
+            a: "5'7",
+            b: "5'8",
+            c: "5'9",
+            d: "5'10"
+        },
+        correctAnswer: 'a'
+    },
 
-//     {
-//         question: 'How do the French people view Napoleon today?',
-//         answers: {
-//             a: 'Onf of the worst tyrant in French history',
-//             b: 'Another Mussolini',
-//             c: 'One of the greatest heros in French history',
-//             d: 'A Roman fanboy who tried to make France somthing it was not'
-//         },
-//         correctAnswer: 'c'
-//     },
+    {
+        question: 'How do the French people view Napoleon today?',
+        answers: {
+            a: 'Onf of the worst tyrant in French history',
+            b: 'Another Mussolini',
+            c: 'One of the greatest heros in French history',
+            d: 'A Roman fanboy who tried to make France somthing it was not'
+        },
+        correctAnswer: 'c'
+    },
 
-//     {
-//         question: 'Who was the final ruler of the House of Bonaparte?',
-//         answers: {
-//             a: 'Napoleon II',
-//             b: 'Napoleon III',
-//             c: 'Carlo',
-//             d: 'Napoleon IV'
-//         },
-//         correctAnswer: 'b'
-//     }
-// ];
+    {
+        question: 'Who was the final ruler of the House of Bonaparte?',
+        answers: {
+            a: 'Napoleon II',
+            b: 'Napoleon III',
+            c: 'Carlo',
+            d: 'Napoleon IV'
+        },
+        correctAnswer: 'b'
+    }
+];
 
-// // ########### HARD ######################### HARD ############################
+// ########### HARD ######################### HARD ############################
 
-// const napoleonHard = [
-//     {
-//         question: 'Who was his second wife?',
-//         answers: {
-//             a: 'Empress Josephine of Austria',
-//             b: 'Duchess Marie Louise of Parma',
-//             c: 'Princess Maria Thersea of Savoy',
-//             d: 'Lady Isabella of Italy'
-//         },
-//         correctAnswer: 'a'
-//     },
+const napoleonHard = [
+    {
+        question: 'Who was his second wife?',
+        answers: {
+            a: 'Empress Josephine of Austria',
+            b: 'Duchess Marie Louise of Parma',
+            c: 'Princess Maria Thersea of Savoy',
+            d: 'Lady Isabella of Italy'
+        },
+        correctAnswer: 'a'
+    },
 
-//     {
-//         question: 'Where is the current locatin of Napoleon’s horse?',
-//         answers: {
-//             a: 'With Napoleon',
-//             b: 'His corpse was lost during Waterloo',
-//             c: 'His skeleton is on display in London',
-//             d: 'He ran off after Napoleon died; no one knew where he went'
-//         },
-//         correctAnswer: 'c'
-//     },
+    {
+        question: 'Where is the current locatin of Napoleon’s horse?',
+        answers: {
+            a: 'With Napoleon',
+            b: 'His corpse was lost during Waterloo',
+            c: 'His skeleton is on display in London',
+            d: 'He ran off after Napoleon died; no one knew where he went'
+        },
+        correctAnswer: 'c'
+    },
 
-//     {
-//         question: 'What was the name of Napoleon’s Personal Guard?',
-//         answers: {
-//             a: 'The Napoleon Guard',
-//             b: 'The Praetorian Guard',
-//             c: 'The Old Guar',
-//             d: 'The Imperial Guard'
-//         },
-//         correctAnswer: 'c'
-//     },
+    {
+        question: 'What was the name of Napoleon’s Personal Guard?',
+        answers: {
+            a: 'The Napoleon Guard',
+            b: 'The Praetorian Guard',
+            c: 'The Old Guar',
+            d: 'The Imperial Guard'
+        },
+        correctAnswer: 'c'
+    },
 
-//     {
-//         question: 'What did Napoleon have a phobia against?',
-//         answers: {
-//             a: 'Dogs',
-//             b: 'Cats',
-//             c: 'Spiders',
-//             d: 'The English'
-//         },
-//         correctAnswer: 'b'
-//     },
+    {
+        question: 'What did Napoleon have a phobia against?',
+        answers: {
+            a: 'Dogs',
+            b: 'Cats',
+            c: 'Spiders',
+            d: 'The English'
+        },
+        correctAnswer: 'b'
+    },
 
-//     {
-//         question: 'Napoleon was born on an island that was not originally French. He developed a different accent when he learned French in school as a result. What was the name of this island? ',
-//         answers: {
-//             a: 'Corsair',
-//             b: 'Corzana',
-//             c: 'Cortada',
-//             d: 'Corsica'
-//         },
-//         correctAnswer: 'd'
-//     }
-// ];
-
-// const player2 = [];
-
-// let selectedChoice = null;
+    {
+        question: 'Napoleon was born on an island that was not originally French. He developed a different accent when he learned French in school as a result. What was the name of this island? ',
+        answers: {
+            a: 'Corsair',
+            b: 'Corzana',
+            c: 'Cortada',
+            d: 'Corsica'
+        },
+        correctAnswer: 'd'
+    }
+];
 
 
-
-// function quizQuestion(){}
-
-// function quizAnswer(){}
 class Player {
     constructor(hp, choice){
         this.hp = hp;
@@ -580,7 +572,13 @@ const characterList = {
 
     augustus: new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard, './img/Augustus.png'),
 
-    // napoleon: new Characters('Napoleon', 50, napoleonEasy, napoleonMedium, napoleonHard, './img/Napoleon.png')
+    napoleon: new Characters('Napoleon', 50, napoleonEasy, napoleonMedium, napoleonHard, './img/Napoleon.png'),
+
+    oda: new Characters('Oda', 50, augustusEasy, augustusMedium, augustusHard, './img/Oda.png'),
+
+    attila: new Characters('Attila', 50, belisariusEasy, belisariusMedium, belisariusHard, './img/Attila.png'),
+
+    hardrada: new Characters('Hardrada', 50, augustusEasy, augustusMedium, augustusHard, './img/Hardrada.png'),
 }
 
 
@@ -652,9 +650,6 @@ function playerSwitch (){
 
 
 console.log(augustusHard);
-
-// console.log(`${playerPick.easy}`);
-
 
 function player1Choice(e){
     e.preventDefault();

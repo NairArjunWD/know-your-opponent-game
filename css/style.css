@@ -1,10 +1,12 @@
-body {
+@media (max-width: 1280px) {
+    body {
     font-family: 'Montserrat', sans-serif;
     background-image: url('../img/meadow.png');
     background-size: cover;
     background-repeat: none;
     height: 100vh;
     position: relative;
+    }
 }
 
 #icon-container {
@@ -27,9 +29,9 @@ body {
     width: 100%;
 }
 
-audio {
+/* audio {
     display: none;
-}
+} */
 
 #wrap {
     display: flex;
@@ -54,7 +56,10 @@ audio {
 
 .char-selection:hover {
     flex: 7;
-    
+}
+
+.char-selection:hover ul{
+    display: block;
 }
 
 #belisarius {
@@ -98,6 +103,17 @@ audio {
 /* button {
     border: 10px orange solid;
 } */
+
+ul {
+    background-color: rgba(204, 204, 204, 0.5);
+    list-style-type: none;
+    vertical-align: middle;
+    display: none;
+}
+
+li {
+    padding-top: 20px;
+}
 
 #playerButtons {
     position: relative;
@@ -216,8 +232,3 @@ score {
 }
 
 
-/* @media only screen (max-width: 1080px) {
-    body {
-        a
-    }
-} */
