@@ -13,6 +13,7 @@ const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('result');
 const submitButton = document.getElementById('submit');
 
+
 // QUESTIONS ******************************************************************
 
 // Belisarius
@@ -363,6 +364,180 @@ const augustusHard = [
     }
 ];
 
+// // Napoleon ##############******************#####################***************
+
+const napoleonEasy = [
+    {
+        question: 'What was the new French nation called under Napoleon?',
+        answers: {
+            a: 'The French Empire',
+            b: 'The Grand French Empire',
+            c: 'The Great Empire of France',
+            d: 'The Gallic Empire'
+        },
+        correctAnswer: 'a'
+    },
+
+    {
+        question: 'Which of these countries was Napoleon a fan of and based his empire from?',
+        answers: {
+            a: 'The Greek City States',
+            b: 'The Roman Empire',
+            c: 'The Hunnic Empire',
+            d: 'The Catalonian Empire'
+        },
+        correctAnswer: 'b'
+    },
+
+    {
+        question: 'What was his son, Napoleon II, named as?',
+        answers: {
+            a: 'King of France',
+            b: 'King of Austria',
+            c: 'King of Rome',
+            d: 'King of Paris'
+        },
+        correctAnswer: 'c'
+    },
+
+    {
+        question: 'Which year was he born?',
+        answers: {
+            a: '1709',
+            b: '1769',
+            c: '1789',
+            d: '1808'
+        },
+        correctAnswer: 'b'
+    },
+
+    {
+        question: 'Napoleon was short?',
+        answers: {
+            a: 'True',
+            b: 'False'
+        },
+        correctAnswer: 'b'
+    }
+]
+
+// ######### MEDIUM #################### MEDIUM ################################
+const napoleonMedium = [
+    {
+        question: 'What was the name of his famous white horse?',
+        answers: {
+            a: 'Vizir',
+            b: 'Blanco',
+            c: 'Clouttier',
+            d: 'Marengo'
+        },
+        correctAnswer: 'd'
+    },
+
+    {
+        question: 'What type of sword did Napoleon carry?',
+        answers: {
+            a: 'rapier',
+            b: 'gladdius',
+            c: 'sabre',
+            d: 'epee'
+        },
+        correctAnswer: 'c'
+    },
+
+    {
+        question: 'How tall is Napoleon by US standards?',
+        answers: {
+            a: "5'7",
+            b: "5'8",
+            c: "5'9",
+            d: "5'10"
+        },
+        correctAnswer: 'a'
+    },
+
+    {
+        question: 'How do the French people view Napoleon today?',
+        answers: {
+            a: 'Onf of the worst tyrant in French history',
+            b: 'Another Mussolini',
+            c: 'One of the greatest heros in French history',
+            d: 'A Roman fanboy who tried to make France somthing it was not'
+        },
+        correctAnswer: 'c'
+    },
+
+    {
+        question: 'Who was the final ruler of the House of Bonaparte?',
+        answers: {
+            a: 'Napoleon II',
+            b: 'Napoleon III',
+            c: 'Carlo',
+            d: 'Napoleon IV'
+        },
+        correctAnswer: 'b'
+    }
+];
+
+// ########### HARD ######################### HARD ############################
+
+const napoleonHard = [
+    {
+        question: 'Who was his second wife?',
+        answers: {
+            a: 'Empress Josephine of Austria',
+            b: 'Duchess Marie Louise of Parma',
+            c: 'Princess Maria Thersea of Savoy',
+            d: 'Lady Isabella of Italy'
+        },
+        correctAnswer: 'a'
+    },
+
+    {
+        question: 'Where is the current locatin of Napoleon’s horse?',
+        answers: {
+            a: 'With Napoleon',
+            b: 'His corpse was lost during Waterloo',
+            c: 'His skeleton is on display in London',
+            d: 'He ran off after Napoleon died; no one knew where he went'
+        },
+        correctAnswer: 'c'
+    },
+
+    {
+        question: 'What was the name of Napoleon’s Personal Guard?',
+        answers: {
+            a: 'The Napoleon Guard',
+            b: 'The Praetorian Guard',
+            c: 'The Old Guar',
+            d: 'The Imperial Guard'
+        },
+        correctAnswer: 'c'
+    },
+
+    {
+        question: 'What did Napoleon have a phobia against?',
+        answers: {
+            a: 'Dogs',
+            b: 'Cats',
+            c: 'Spiders',
+            d: 'The English'
+        },
+        correctAnswer: 'b'
+    },
+
+    {
+        question: 'Napoleon was born on an island that was not originally French. He developed a different accent when he learned French in school as a result. What was the name of this island? ',
+        answers: {
+            a: 'Corsair',
+            b: 'Corzana',
+            c: 'Cortada',
+            d: 'Corsica'
+        },
+        correctAnswer: 'd'
+    }
+];
+
 // const player2 = [];
 
 // let selectedChoice = null;
@@ -402,7 +577,10 @@ class Characters {
 
 const characterList = {
     belisarius: new Characters('Belisarius', 50, belisariusEasy, belisariusMedium, belisariusHard, './img/Belisarius.png'),
-    augustus: new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard, './img/Augustus.png')
+
+    augustus: new Characters('Augustus', 50, augustusEasy, augustusMedium, augustusHard, './img/Augustus.png'),
+
+    napoleon: new Characters('Napoleon', 50, napoleonEasy, napoleonMedium, napoleonHard, './img/Napoleon.png')
 }
 
 
@@ -496,12 +674,7 @@ function player1Choice(e){
 
 function player2Choice(e) {
     e.preventDefault();
-    if ('#belisarius-button') {
-        playerEasy = belisariusEasy;
-        playerMedium = belisariusMedium;
-        playerHard = belisariusHard;
-        console.log(playerEasy)
-    } else if ('#augustus-button') {
+    if ('#augustus-button') {
         playerEasy = augustusEasy;
         playerMedium = augustusMedium;
         playerHard = augustusHard;
@@ -609,12 +782,18 @@ let random;
         // console.log(userAnswer)
         // if answer is correct
         if (userAnswer === questions[random].correctAnswer) {
-            if(currentPlayer = player2Choice) {
+            if (turn % 2 === 0) {
                 player1.hp -= 10;
                 document.getElementById('score1').innerText = "Player 1 HP: " + player1.hp + "/50";
+                if (player1.hp === 0) {
+                    alert('Hello!');
+                }
             } else {
                 player2.hp -= 10;
                 document.getElementById('score2').innerText = "Player 2 HP: " + player2.hp + "/50";
+                if (player2.hp === 0) {
+                    alert('Hi!');
+                }
             }
             // add to the number of correct answers
             // player1.hp -= 10;
